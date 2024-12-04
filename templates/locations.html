@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Locations
+{% endblock %}
+
+{% block main %}
+
+<p class="justified_text">
+  Clinical studies can be conducted all over the world. On below chart you can notice <b>20</b> countries which play the main role in those experiments.
+  The number of studies shows how many of them has conducted or continues to conduct.
+  The rest of the countries which are invisible on this chart are responsible for conducting <b>{{ other_countries }}</b> studies.
+</p>
+
+<div id="canva1">
+    <canvas id="locations"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('locations');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: {{ labels | safe }},
+    datasets: [{
+      label: 'Number of studies',
+      data: {{ values | safe }},
+      borderWidth: 1
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+</script>
+
+{% endblock %}

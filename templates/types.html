@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Phases
+{% endblock %}
+
+{% block main %}
+
+<p class="justified_text">
+  There are two main types of Clinical Studies: <b>Interventional Studies</b> and <b>Observational Studies</b>.
+  Both may try to learn more about an intervention, which may be a drug, behavior, or medical device.
+  The difference is that observational study participants are not assigned to get an intervention.
+  If there is an intervention, subjects were already using it as part of their regular health care or daily life.
+  In Interventional Studies also known as Clinical Trials, researchers randomly assign participants to interventions.
+  Often, the intervention is investigational, which means it is not approved for doctors to prescribe to people.
+</p>
+<p class="justified_text">
+  The additional way to have access to unregistered drug is the <b>Expanded Access</b> also called compassionate use.
+  This approach is for patients with serious diseases or conditions who cannot participate in a clinical study to gain access to a medical product that has not been approved by regulatory agency.
+  That option allows the use of unauthorised medicine.
+</p>
+
+<div id="canva1">
+    <canvas id="types"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('types');
+
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: {{ labels | safe }},
+    datasets: [{
+      label: 'Phases',
+      data: {{ values | safe }},
+      borderWidth: 1
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        display: false
+      }
+    }
+  }
+});
+</script>
+
+{% endblock %}

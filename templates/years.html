@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Years
+{% endblock %}
+
+{% block main %}
+<p class="justified_text">
+  In this tab you can check how many clincial studies started on the each year of the last <b>20</b>. The started date in the date when the first participant was enrolled in a specific study.
+  In clinical database exsist studies with the "estimated" study start date when the researchers think the study will start. At this moment we can find <b>{{ estimated_studies }}</b> future studies.
+</p>
+<p class="justified_text">
+  As you can see on the below figure, for almost last two decades we have had an upward trend in started clinical studies.
+  Before 2000 the number of setted studies was <b>{{ previous_studies }}</b> and the first participant was enrolled in <b>{{ first_study }}</b>.
+</p>
+
+<div id="canva1">
+    <canvas id="years"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('years');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: {{ labels | safe }},
+    datasets: [{
+      label: 'Studies started',
+      data: {{ values | safe }},
+      borderWidth: 1
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+</script>
+{% endblock %}

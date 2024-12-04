@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Phases
+{% endblock %}
+
+{% block main %}
+
+
+
+<p class="justified_text">
+  We can distinguish five phases which are: Early Phase 1 (formerly listed as Phase 0), Phase 1, Phase 2, Phase 3 and Phase 4.
+  Not Applicable is used to describe trials without defined phases, including studies of devices or behavioral interventions.
+  The phase is based on the study's objective, the number of participants and other characteristics.
+  <ul>
+    <li class="justified_list"><b>Phase 1</b> focuses on the drug's safety. They are usually conducted with healthy volunteers and involve a small number of participants.
+      The goal is to determine the drug's most frequent and serious adverse events (SAE).</li>
+    <li class="justified_list"><b>Phase 2</b> of clinical studies gather preliminary data on whether a drug works in people who have a certain condition/disease.
+      Participants receiving the drug may be compared to other subjects receiving a different treatment, usually an inactive substance, known also as a placebo or a different drug.
+      In this phase safety as well as short-term adverse events (AE) are studied.</li>
+    <li class="justified_list"><b>Phase 3</b> accumulate more information about a drug's safety and effectiveness by studying different populations and different dosages.
+      These studies typically involve much more participants.</li>
+    <li class="justified_list"><b>Phase 4</b> occurs after drug approval.
+      It includes postmarket requirement and commitment studies that are required of or agreed to by the study sponsor.
+      During this phase additional information about a drug's safety, efficacy or optimal use are gathered.</li>
+  </ul>
+</p>
+<div id="canva1">
+    <canvas id="phases"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('phases');
+
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: {{ labels | safe }},
+    datasets: [{
+      label: 'Phases',
+      data: {{ values | safe }},
+      borderWidth: 1
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        display: false
+      }
+    }
+  }
+});
+</script>
+
+{% endblock %}

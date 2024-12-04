@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<p class="centered_text">
+    Have you ever wonder how many different clinical studies exist across the world?
+    <br>
+    <br>
+    What countries are responsible the most to conduct them or how many of them were registered in the last years?
+</p>
+
+<p class="justified_text">
+    On this website you can satisfy your curiosity and find out more about some statistics you are interested about.
+    For this, feel free to explore some charts with your own ideas or use a couple of general figures available under below buttons.
+    Beside that, I encourage you to read more theoretical informations on this website about clinical studies to gain basic knowledge and be more aware of a part of the drug development process, by which new drugs can be made available on the market.
+</p>
+
+<p class="note">
+        Studies found: {{ number_of_studies }}
+        Last data update: {{ last_update_date }}
+</p>
+
+
+<div class="button_container">
+    <form action="/phases" method="get">
+        <button id="button1" type="submit">Phases</button>
+    </form>
+    <form action="/types" method="get">
+        <button id="button1" type="submit">Types</button>
+    </form>
+    <form action="/locations" method="get">
+        <button id="button1" type="submit">Locations</button>
+    </form>
+</div>
+
+<div class="button_container">
+    <form action="/years" method="get">
+        <button id="button1" type="submit">Years</button>
+    </form>
+    <form action="/intervention" method="get">
+        <button id="button1" type="submit">Interventions</button>
+    </form>
+    <form action="/status" method="get">
+        <button id="button1" type="submit">Status</button>
+    </form>
+</div>
+
+
+
+{% endblock %}

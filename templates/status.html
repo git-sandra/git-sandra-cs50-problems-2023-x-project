@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Status
+{% endblock %}
+
+{% block main %}
+
+<p class="justified_text">
+  Studies can have different statuses. Each of them tells us about the current recruitment status or the expanded access status.
+  <ul>
+    <li class="justified_list"><b>Active, not recruiting</b> - the study is ongoing, and participants are receiving an intervention or being examined, but potential participants are not currently being recruited or enrolled.</li>
+    <li class="justified_list"><b>Available</b> - expanded access is currently available for this investigational treatment, and patients who are not participants in the clinical study may be able to gain access to the drug, biologic, or medical device being studied.</li>
+    <li class="justified_list"><b>Completed</b> - the study has ended normally, and participants are no longer being examined or treated.</li>
+    <li class="justified_list"><b>Enrolling by invitation</b> - the study is selecting its participants from a population, or group of people, decided on by the researchers in advance.
+      These studies are not open to everyone who meets the eligibility criteria.</li>
+    <li class="justified_list"><b>Not yet recruiting</b> - the study has not started recruiting participants.</li>
+    <li class="justified_list"><b>Recruiting</b> - the study is currently recruiting participants.</li>
+    <li class="justified_list"><b>Suspended</b> - the study has stopped early but may start again.</li>
+    <li class="justified_list"><b>Terminated</b> - the study has stopped early and will not start again. Participants are no longer being examined or treated.</li>
+    <li class="justified_list"><b>Withdrawn</b> - the study stopped early, before enrolling its first participant.</li>
+</p>
+
+<div id="canva1">
+    <canvas id="status"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('status');
+
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: {{ labels | safe }},
+    datasets: [{
+      label: 'Status',
+      data: {{ values | safe }},
+      borderWidth: 1
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        display: false
+      }
+    }
+  }
+});
+</script>
+
+{% endblock %}

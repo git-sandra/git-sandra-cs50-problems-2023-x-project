@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Explore
+{% endblock %}
+
+{% block main %}
+    <form class="inputs" action="/explore" method="post">
+        <input name="condition" id="condition" autofocus="off" autocomplete="off" placeholder="Condition" value="{{ condition_value }}">
+        <input name="sponsor" id="sponsor" autofocus="off" autocomplete="off" placeholder="Sponsor" value="{{ sponsor_value }}">
+        <input name="country" id="country" autofocus="off" autocomplete="off" placeholder="Country" value="{{ country_value }}">
+        <input name="intervention" id="intervention" autofocus="off" autocomplete="off" placeholder="Intervention Name" value="{{ intervention_value }}">
+        <button id="button2" type="submit">Search</button>
+        <div class="loader" id="loader"></div>
+    </form>
+
+    <p class="message">{{ message }}</p>
+
+    <div class="canvas_container">
+      <div id="canva2">
+          <canvas id="phase"></canvas>
+      </div>
+
+      <div id="canva2">
+        <canvas id="type"></canvas>
+      </div>
+    </div>
+
+    <div class="canvas_container">
+      <div id="canva2">
+        <canvas id="status"></canvas>
+      </div>
+
+      <div id="canva2">
+        <canvas id="age"></canvas>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+        let button = document.getElementById("button2");
+        let canva = document.getElementById("canva2");
+        let loader = document.getElementById("loader");
+
+        button.addEventListener('click', () => {
+            loader.style.display = "inline-block"
+
+          });
+
+    </script>
+
+    <script>
+        const phase_canva = document.getElementById('phase');
+
+        new Chart(phase_canva, {
+          type: 'pie',
+          data: {
+            labels: {{ phase_labels | safe }},
+            datasets: [{
+              label: 'Phase',
+              data: {{ phase_values | safe }},
+              borderWidth: 1
+            }]
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                display: false
+              }
+            }
+          }
+        });
+
+          const type_canva = document.getElementById('type');
+
+          new Chart(type_canva, {
+            type: 'pie',
+            data: {
+              labels: {{ type_labels | safe }},
+              datasets: [{
+                label: 'Type',
+                data: {{ type_values | safe }},
+                borderWidth: 1
+              }]
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  display: false
+                }
+              }
+            }
+          });
+
+          const status_canva = document.getElementById('status');
+
+          new Chart(status_canva, {
+            type: 'pie',
+            data: {
+              labels: {{ status_labels | safe }},
+              datasets: [{
+                label: 'Location',
+                data: {{ status_values | safe }},
+                borderWidth: 1
+              }]
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  display: false
+                }
+              }
+            }
+          });
+
+          const age_canva = document.getElementById('age');
+
+          new Chart(age_canva, {
+            type: 'pie',
+            data: {
+              labels: {{ age_labels | safe }},
+              datasets: [{
+                label: 'Age',
+                data: {{ age_values | safe }},
+                borderWidth: 1
+              }]
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  display: false
+                }
+              }
+            }
+          });
+
+      </script>
+
+
+
+{% endblock %}

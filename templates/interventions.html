@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Interventions
+{% endblock %}
+
+{% block main %}
+<p class="justified_text">
+  <b>Intervention</b> - a process or action that is the focus of a clinical study.
+  Interventions include drugs, medical devices, procedures, vaccines, and other products that are either investigational or already available.
+  Interventions can also include noninvasive approaches, such as education or modifying diet and exercise.
+</p>
+
+<div id="canva1">
+    <canvas id="interventions"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('interventions');
+
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: {{ labels | safe }},
+    datasets: [{
+      label: "Intervention's type",
+      data: {{ values | safe }},
+      borderWidth: 1
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        display: false
+      }
+    }
+  }
+});
+</script>
+
+{% endblock %}

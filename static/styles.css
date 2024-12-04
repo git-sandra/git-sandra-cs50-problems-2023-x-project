@@ -1,0 +1,342 @@
+.body {
+    background-color: #FFF3E2;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.footer a {
+    color: #F0B86E;
+}
+
+.footer {
+    text-align: center;
+    color: #F0B86E;
+    margin-top: auto;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.title {
+    text-align: center;
+    font-size: 110px;
+    color: #E97777;
+    font-weight: 900;
+    margin: 50px auto;
+}
+
+@media only screen and (max-width: 1250px) {
+    .title {
+        font-size: 8vw;
+    }
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    padding-top: 0px;
+    padding-right: 50px;
+    padding-left: 50px;
+    background-color: #CEDEBD;
+}
+
+nav ul {
+    text-align: center;
+    margin: 0px;
+}
+
+nav li {
+    display: inline-block;
+    list-style: none;
+    text-size-adjust: auto;
+}
+
+nav li a {
+    font-size: 40px;
+    padding-top: 0px;
+    padding-right: 100px;
+    color: white;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+@media only screen and (max-width: 1000px) {
+    nav li a {
+        font-size: 4vw;
+        padding-right: 40px;
+    }
+
+    nav {
+        padding-left: 20px;
+        height: 5vw;
+    }
+}
+
+nav li a:hover {
+    color: #FFE5AD;
+}
+
+.button_container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#button1 {
+    height: 40px;
+    width: 180px;
+    color: #A0C3D2;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #D6E4E5;
+    border: none;
+    font-family: monospace;
+    border-radius: 15px;
+    margin: 15px 30px 15px 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+    #button1 {
+        margin: 15px 20px 15px 20px;
+        height: 30px;
+        width: 160px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #button1 {
+        margin: 15px 10px 15px 10px;
+        height: 30px;
+        width: 130px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    #button1 {
+        margin: 15px 10px 15px 10px;
+        height: 30px;
+        width: 100px;
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #button1 {
+        margin: 15px 10px 15px 10px;
+        height: 28px;
+        width: 90px;
+        font-size: 10px;
+    }
+}
+
+#button2 {
+    height: 27px;
+    width: 130px;
+    margin-left: 30px;
+    background-color: #FFFFDD;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.inputs {
+    margin: 20px auto;
+    text-align: center;
+}
+
+input {
+    width: 200px;
+    height: 25px;
+    margin-left: 5px;
+    background-color: #FFFFDD;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 1100px) {
+    input {
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    input {
+        width: 130px;
+    }
+
+    #button2 {
+        width: 120px;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 720px) {
+    input {
+        width: 110px;
+    }
+
+    #button2 {
+        width: 110px;
+        margin-left: 20px;
+    }
+}
+
+.message {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+#canva1 {
+    margin: 60px auto 0;
+    position: relative;
+    height: 500px;
+    width: 700px;
+}
+
+@media only screen and (max-width: 830px) {
+    #canva1 {
+        width: 80%;
+    }
+}
+
+#canva2 {
+    margin: 40px 30px 30px 0;
+    position: relative;
+    height: 400px;
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+}
+
+@media only screen and (max-width: 650px) {
+    #canva2 {
+        width: 80%;
+    }
+}
+
+.canvas_container {
+    width: 100%;
+    text-align: center;
+}
+
+.justified_text {
+    text-indent: 30px;
+    width: 70%;
+    text-align: justify;
+    margin: 50px auto 10px;
+    font-size: 20px;
+    color: #A45D5D;
+    font-weight: 500;
+}
+
+.justified_list {
+    width: 70%;
+    text-align: justify;
+    margin: 20px auto 10px;
+    font-size: 20px;
+    color: #A45D5D;
+    font-weight: 500;
+}
+
+.centered_text {
+    text-align: center;
+    font-size: 23px;
+    color: #A45D5D;
+    font-weight: 600;
+    width: 70%;
+    margin: 50px auto 0;
+
+}
+
+.note {
+    text-align: center;
+    font-size: 15px;
+    color: #A45D5D;
+    font-weight: 500;
+    width: 70%;
+    margin: 50px auto 20px;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .justified_text,
+    .justified_list,
+    .centered_text {
+        font-size: 4vw;
+    }
+}
+
+@media only screen and (min-width: 1740px) {
+
+    .justified_text,
+    .justified_list {
+        width: 65%
+    }
+}
+
+@media only screen and (min-width: 1860px) {
+
+    .justified_text,
+    .justified_list {
+        width: 60%
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+
+    .justified_text,
+    .justified_list {
+        width: 55%
+    }
+}
+
+@media only screen and (min-width: 2200px) {
+
+    .justified_text,
+    .justified_list {
+        width: 50%
+    }
+}
+
+.about_title {
+    text-align: center;
+    font-size: 50px;
+    color: #BD4B4B;
+    font-weight: 800;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.loader {
+    border: 5px solid #ffffeb;
+    border-top: 5px solid #E97777;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: rotation 1s linear infinite;
+    display: none;
+    vertical-align: middle;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

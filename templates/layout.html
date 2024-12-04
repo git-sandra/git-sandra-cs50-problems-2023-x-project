@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link href="../static/styles.css" rel="stylesheet">
+        <title>{% block title %}{% endblock %} | Clinical Studies' Charts</title>
+    </head>
+    <body class="body">
+
+        <p class="title">Clinical Studies' Charts</p>
+        <div>
+            <nav>
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/explore">Explore</a></li>
+                  <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer class="footer">
+            Data provided by <a href="https://www.clinicaltrials.gov/">ClinicalTrials.gov</a>
+        </footer>
+
+    </body>
+</html>
